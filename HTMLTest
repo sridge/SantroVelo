@@ -13,9 +13,9 @@
 
 #form {
 	color: #e74038;
-    border-radius: 5px;
+    	border-radius: 5px;
 	border: 2px solid #5f7ab1; 
-    padding: 15px;
+    	padding: 15px;
 	width: 345px; 
 	display: block;
 	text-align: center;
