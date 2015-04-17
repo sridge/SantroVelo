@@ -1,22 +1,22 @@
 <!DOCTYPE HTML>
 <html>
-<body>
+
 <head>
 <!--which is better, RGB or HTML color codes?-->
 <style>
 
-#header {
+#Text {
 	color: #e74038;
 	text-align: center;
 	font: 30px/100% Verdana;
 	
 } 
 
-#form {
+#SubmitBox {
 	color: #e74038;
-    border-radius: 5px;
+    	border-radius: 5px;
 	border: 2px solid #5f7ab1; 
-    padding: 15px;
+    	padding: 15px;
 	width: 345px; 
 	display: block;
 	text-align: center;
@@ -27,6 +27,9 @@
 
 </style>
 </head>
+
+<body>
+
 	
 <h1 id=header>Hello World!</h1>
 <p id=header>Test of a text box</p>
