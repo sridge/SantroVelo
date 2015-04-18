@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<head>
+	
+<script>
+//enter a customer name and return their info
+//member is the JSON dictionary
+
+function memberSearch() {
+	
+var firstLast, results;
+var obj = { "bob smith": { "date":"11/13/12", "valid": "no"}};
+var member = JSON.parse(obj)
+
+FirstLast = document.getElementById("searchBox").value;
+
+for(var i = 0; i < member.length; i++){
+	if(var firstLast == member[i]) {
+		results = member[i].date.valid;
+	} else {
+		results = "DNE";
+	}
+}
+document.getElementById("print").innerHTML = results;
+}
+</script>
+
+<!--Stylesheet-->
+<link rel="stylesheet" type="text/css" href="/Users/Sean/Desktop/Santro.css">
+
+</head>
+	
+<h1 id="header">Member Database</h1>
+<p id="header">Test of a text box</p>
+
+
+<input id="form" type="text" name="First and Last Name">
+<button type="button" onclick="memberSearch()">Look up</button>
+<p id="print"></p>
+
+</body>
+</html>
