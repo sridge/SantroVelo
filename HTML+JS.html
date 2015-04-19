@@ -21,6 +21,10 @@
 		//enter a customer name and return their info
 		//member is the JSON dictionary
 
+		function searchTermChanged() {
+			memberSearch();
+		}
+		
 		function memberSearch() {
 			var firstLast;
 			var results;
@@ -31,7 +35,6 @@
 					"valid": "no"
 				}
 			];
-			
 			
 			firstLast = $("#searchBox").val();
 
