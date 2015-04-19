@@ -1,43 +1,49 @@
 <!DOCTYPE HTML>
 <html>
-<body>
-<head>
+	<head>
+
+		<!--Stylesheet-->
+		<!-- <link rel="stylesheet" type="text/css" href="/Users/Sean/Desktop/Santro.css"> -->
+
+	</head>
+	<body>
 	
-<script>
-//enter a customer name and return their info
-//member is the JSON dictionary
-
-function memberSearch() {
+	<h1 id="header">Member Database</h1>
+	<p id="header">Test of a text box</p>
 	
-var firstLast, results;
-var obj = { "bob smith": { "date":"11/13/12", "valid": "no"}};
-var member = JSON.parse(obj)
+	<input id="searchBox" type="text" name="First and Last Name">
+	<button  type="button" onclick="memberSearch()">Look up</button>
+	<p id="print"></p>
 
-FirstLast = document.getElementById("searchBox").value;
+	</body>
+	<script>
+		//enter a customer name and return their info
+		//member is the JSON dictionary
 
-for(var i = 0; i < member.length; i++){
-	if(var firstLast == member[i]) {
-		results = member[i].date.valid;
-	} else {
-		results = "DNE";
-	}
-}
-document.getElementById("print").innerHTML = results;
-}
-</script>
+		function memberSearch() {
+			var firstLast;
+			var results;
+			var data = [ 
+				{ 
+					"name" : "bob smith",
+					"date": "11/13/12", 
+					"valid": "no"
+				}
+			];
+			
+			
+			firstLast = document.getElementById("searchBox").value;
 
-<!--Stylesheet-->
-<link rel="stylesheet" type="text/css" href="/Users/Sean/Desktop/Santro.css">
-
-</head>
-	
-<h1 id="header">Member Database</h1>
-<p id="header">Test of a text box</p>
-
-
-<input id="form" type="text" name="First and Last Name">
-<button type="button" onclick="memberSearch()">Look up</button>
-<p id="print"></p>
-
-</body>
+			for (var i = 0; i < data.length; i++) {
+				if(firstLast == data[i].name) {
+					results = data[i].date + " " + data[i].valid;
+				} else {
+					results = "DNE";
+				}
+			}
+			
+			document.getElementById("print").innerHTML = results;
+			
+		}
+	</script>
 </html>
