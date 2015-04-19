@@ -4,7 +4,8 @@
 
 		<!--Stylesheet-->
 		<!-- <link rel="stylesheet" type="text/css" href="/Users/Sean/Desktop/Santro.css"> -->
-
+		
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	</head>
 	<body>
 	
@@ -12,7 +13,7 @@
 	<p id="header">Test of a text box</p>
 	
 	<input id="searchBox" type="text" name="First and Last Name">
-	<button  type="button" onclick="memberSearch()">Look up</button>
+	<button type="button" onclick="memberSearch()">Look up</button>
 	<p id="print"></p>
 
 	</body>
@@ -32,7 +33,7 @@
 			];
 			
 			
-			firstLast = document.getElementById("searchBox").value;
+			firstLast = $("#searchBox").val();
 
 			for (var i = 0; i < data.length; i++) {
 				if(firstLast == data[i].name) {
@@ -42,8 +43,7 @@
 				}
 			}
 			
-			document.getElementById("print").innerHTML = results;
-			
+			$("#print").html(results);
 		}
 	</script>
 </html>
