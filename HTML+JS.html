@@ -2,8 +2,8 @@
 <html>
 	<head>
 
-		<!--Stylesheet
-		<link rel="stylesheet" href="Santro.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
+		<!--Stylesheet-->
+		<link rel="stylesheet" href="Santro.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		
@@ -18,9 +18,8 @@
 
 	</body>
 	<script>
-		//enter a customer name and return their info
-		//member is the JSON array derived from gdoc
-		
+	
+		//gdoc data test example
 			var data = [ 
 					{ 
 						"name" : "Bob Smith",
@@ -28,7 +27,9 @@
 						"valid": "No"
 					}
 				];
-    		
+				
+		//enter a customer name and return their info
+		//member is the JSON array derived from gdoc	
 		function memberSearch(data) {
 			var firstLast;
 			var newMember;
@@ -38,8 +39,12 @@
 			newMember = $("#searchBox").val()
 
 			for (var i = 0; i < data.length; i++) {
+				//.toLowerCase santizes so name doesn't have to capitalized
+				//.indexOf used so you can search by first or last name
+				//.length, only starts to search if you have entered two characters
 				if(data[i].name.toLowerCase().indexOf(firstLast) >= 0 && firstLast.length >= 2) {
 					results = data[i].name + " | " + data[i].date + " | " + data[i].valid;
+				//Display nothing if fewer than 2 characters entered		
 				} else if (firstLast.length <= 1) {
 					results = " ";			
 				} else {
@@ -50,7 +55,8 @@
 			
 		   
 		}
-		
+		//used to add members to the database
+		//currently unfinished
 		function addMember(data) {
 			var newMember;
 			
@@ -72,4 +78,3 @@
 
 	</script>
 </html>
-
