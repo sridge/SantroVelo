@@ -1,0 +1,50 @@
+@font-face {
+    font-family: written;
+    src: url(LemonYellow.otf);
+}
+
+.boxtext {
+	color: #e74038;
+	text-align: center;
+	font: 30px/100% written;
+	background: #fcfebd;
+	padding: 15px;
+	
+} 
+
+.boxes {
+	color: #e74038;
+    border-radius: 5px;
+	border: 3px solid #5f7ab1; 
+    padding: 15px;
+	width: 370px;
+	height: 20px; 
+	display: block;
+	text-align: center;
+	margin: auto;
+	font: 30px/100% written;
+	background-color: white;
+	outline: none;
+
+}
+
+.names {
+	color: #e74038;
+    border-radius: 5px;
+	border: 3px solid #5f7ab1; 
+    padding: 15px;
+	width: 370px;
+	height: 400px; 
+	display: block;
+	text-align: center;
+	margin: auto;
+	font: 30px/100% written;
+	background-color: white;
+	overflow: auto;
+
+}
+
+body {
+	background: #fcfebd;
+}
+
