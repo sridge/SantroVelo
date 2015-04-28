@@ -1,4 +1,3 @@
-
 	//the response text returned by ajax is not a javascript object
 	//this function creates a json object
 	function buildData() {
@@ -60,7 +59,7 @@
 		
 		var ans = confirm("are you sure you want to add "+ newMember + " as a new member?");
 		
-		if (ans == true) {//&& newMember.indexOf(" ") /= 0 || undefined) {
+		if (ans == true && newMember.indexOf(" ") /= 0 || -1) {
 			firstname = newMember
 		} else {
 			alert("re-type full name to try again");
@@ -72,4 +71,4 @@
 		memberSearch(data);
 	})
 
-	console.log("supbrah".indexOf(" "))
+	
