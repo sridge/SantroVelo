@@ -17,20 +17,20 @@
 	//enter a customer name and return their info
 	//member is the JSON array derived from gdoc	
 	function memberSearch(data) {
+		
 		var firstLast;
 		var newMember;
 		var results;
 		
-		data = buildData()
-		
+		data = buildData();
 		firstLast = $("#searchBox").val().toLowerCase();
-		newMember = $("#searchBox").val()
-		results = ""
+		newMember = $("#searchBox").val();
+		results = "";
 
 		for (var i = 0; i < data.length; i++) {
 			
 			//formatting
-			var memberName = data[i].firstname+" "+data[i].lastname
+			var memberName = data[i].firstname+" "+data[i].lastname;
 			
 			//.toLowerCase santizes so name doesn't have to capitalized
 			//.indexOf used so you can search by first or last name
