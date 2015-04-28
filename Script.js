@@ -60,7 +60,8 @@
 		var ans = confirm("are you sure you want to add "+ newMember + " as a new member?");
 		
 		if (ans == true && newMember.indexOf(" ") /= 0 || -1) {
-			firstname = newMember
+			split = newMember.indexOf(" ")
+			firstname = newMember.subsrting
 		} else {
 			alert("re-type full name to try again");
 		}
