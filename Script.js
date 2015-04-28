@@ -27,10 +27,8 @@
 		results = "";
 
 		for (var i = 0; i < data.length; i++) {
-			
 			//formatting
 			var memberName = data[i].firstname+" "+data[i].lastname;
-			
 			//.toLowerCase santizes so name doesn't have to capitalized
 			//.indexOf used so you can search by first or last name
 			//.length, only starts to search if you have entered two characters
@@ -51,17 +49,21 @@
 	//currently unfinished
 	function addMember(data) {
 		var newMember;
-		var firstname
-		var lastname
-		var datejoined
+		var firstname = "";
+		var lastname = "";
+		var datejoined;
+		var split = ""
 		
 		newMember = $("#searchBox").val();
 		
-		var ans = confirm("are you sure you want to add "+ newMember + " as a new member?");
+		var ans = confirm("add a new member?");
 		
 		if (ans == true && newMember.indexOf(" ") /= 0 || -1) {
-			split = newMember.indexOf(" ")
-			firstname = newMember.subsrting
+			$("#print").hide
+			$("#newMemberForm").show
+			split = newMember.indexOf(" ");
+			firstname = newMember.substring(0,split);
+			lastname = newMember.substring(split+1);
 		} else {
 			alert("re-type full name to try again");
 		}
