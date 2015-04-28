@@ -1,3 +1,5 @@
+	$("#newMemberForm").hide	
+	
 	//the response text returned by ajax is not a javascript object
 	//this function creates a json object
 	function buildData() {
