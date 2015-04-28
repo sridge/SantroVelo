@@ -59,7 +59,7 @@
 		var ans = confirm("add a new member?");
 		
 		if (ans == true && newMember.indexOf(" ") != 0 && newMember.indexOf(" ") != -1) {
-			$("#print").hide
+			$(".names").hide
 			$("#newMemberForm").show
 			split = newMember.indexOf(" ");
 			firstname = newMember.substring(0,split);
