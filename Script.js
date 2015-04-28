@@ -52,15 +52,18 @@
 	//currently unfinished
 	function addMember(data) {
 		var newMember;
+		var firstname
+		var lastname
+		var datejoined
 		
 		newMember = $("#searchBox").val();
 		
 		var ans = confirm("are you sure you want to add "+ newMember + " as a new member?");
 		
-		if (ans == true) {
-			alert(newMember +" is now a member!");
+		if (ans == true) {//&& newMember.indexOf(" ") /= 0 || undefined) {
+			firstname = newMember
 		} else {
-			alert("re-type name to try again");
+			alert("re-type full name to try again");
 		}
 	}
 		
@@ -68,3 +71,5 @@
 	$( "#searchBox" ).keyup(function() {
 		memberSearch(data);
 	})
+
+	console.log("supbrah".indexOf(" "))
