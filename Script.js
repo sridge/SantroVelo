@@ -1,5 +1,6 @@
-	$("#newMemberForm").hide	
-	
+	$("#newMemberForm").hide()
+	$("#submit").hide()
+	$("#memberTable").hide()
 	//the response text returned by ajax is not a javascript object
 	//this function creates a json object
 	function buildData() {
@@ -14,6 +15,7 @@
 			
 	var data = buildData()
 	
+	
 			
 	//enter a customer name and return their info
 	//member is the JSON array derived from gdoc	
@@ -22,6 +24,9 @@
 		var firstLast;
 		var newMember;
 		var results;
+		var names = "";
+		var phone = "";
+		var date = "";
 		
 		data = buildData();
 		firstLast = $("#searchBox").val().toLowerCase();
@@ -35,16 +40,32 @@
 			//.indexOf used so you can search by first or last name
 			//.length, only starts to search if you have entered two characters
 			if(memberName.toLowerCase().indexOf(firstLast) >= 0 && firstLast.length >= 2 && data[i].valid == true) {
-				results += memberName + "&nbsp;&nbsp;&nbsp;" + data[i].phone + "&nbsp;&nbsp;&nbsp;" + data[i].datejoined.substring(0,10) + "\<br>";	
-				
+				//results += memberName + "&nbsp;&nbsp;&nbsp;" + data[i].phone + "&nbsp;&nbsp;&nbsp;" + data[i].datejoined.substring(0,10) + "\<br>";
+				names += memberName + "\<br>"
+				phone += "(" + data[i].phone.substring(0,3) + ") " + data[i].phone.substring(3,6) + "-" + data[i].phone.substring(6,10) + "\<br>"
+				date += data[i].datejoined.substring(0,10) + "\<br>"
 			}
 			} 
 			
-		if (results == "" && firstLast.length >= 2){
-				results = "Not found, click to add \""+newMember+"\"";
+			if (names.length >=1 && firstLast.length >= 2) {	
+				
+				//} else if (firstLast.length >= 2) {
+				console.log(names)
+				$("#memberTable").show()
+				$("#memberName").html(names)
+				$("#phone").html(phone)
+				$("#date").html(date)		
+			} else {
+				$("#memberTable").hide()
 			}
-	
+			
+		results = "Not found? click to add \""+newMember+"\"";
 		$("#print").html(results);
+		
+	
+
+		
+	
 	}
 
 	//used to add members to the database
@@ -61,11 +82,27 @@
 		var ans = confirm("add a new member?");
 		
 		if (ans == true && newMember.indexOf(" ") != 0 && newMember.indexOf(" ") != -1) {
-			$(".names").hide
-			$("#newMemberForm").show
+			
+			$("#hideme").hide();
+			$("#searchBox").hide();
+			$("#newMemberForm").show();
+			$("#submit").show();
+			
 			split = newMember.indexOf(" ");
 			firstname = newMember.substring(0,split);
 			lastname = newMember.substring(split+1);
+			$("#firstname").val(firstname);
+			$("#lastname").val(lastname);
+			
+			// var httpString ="?firstname="+$("#firstname").val()+"&lastname="+$("#lastname").val()+"&datejoined=2015-04-25&phone="+$("#phone").val()+"&valid=true"
+			
+			var httpString = "https://santro-velo.herokuapp.com:443/users?firstname=Sean&lastname=MacdDonald&datejoined=2015-04-25&phone=8043496591&valid=true"
+			
+			
+			$("#submit").click(function(){
+				xmlhttp.open("POST","https://santro-velo.herokuapp.com:443/users",false);
+				xmlhttp.send(httpString)
+			});
 		} else {
 			alert("re-type full name to try again");
 		}

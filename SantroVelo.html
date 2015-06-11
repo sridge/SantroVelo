@@ -18,17 +18,38 @@
 	<input id="searchBox" type="text" name="First and Last Name" class="boxes" autocomplete="off">
 	<br>
 	
-	<div class="names" id= "hideme">
+	<div class="names" id="hideme">
+	<table id="memberTable">
+	  <tr>
+	    <th>Name</th>
+	    <th>Phone</th>
+	    <th>Date</th>
+	  </tr>
+	  <tr>
+	    <td id="memberName"></td>
+	    <td id="phone"></td>
+	    <td id="date"></td>
+	  </tr>
+	</table>
 	<p id="print" onclick="addMember()"></p>
 	</div>
+	<br>
+	
+	<form class="boxtext">
+	<button class="buttons" id="submit">Submit</button><input type="submit" value="X" class="buttons" on>
+	<br>
+	</form>
 
-	<div id="newMemberForm" class="names">
+	<div id="newMemberForm" class="boxtext">
 		<form>
 		First name<br>
-		<input type="text" id="firstname">
+		<input type="text" id="firstname" class="boxes">
 		<br>
 		Last name<br>
-		<input type="text" id="lastname">
+		<input type="text" id="lastname" class="boxes">
+		<br>
+		Phone<br>
+		<input type="text" id="phone" class="boxes">
 		</form>
 	</div>
 	
