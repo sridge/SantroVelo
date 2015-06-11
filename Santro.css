@@ -3,6 +3,10 @@
     src: url(LemonYellow.otf);
 }
 
+#memberTable {
+	width: 100%;
+}
+
 .boxtext {
 	color: #e74038;
 	text-align: center;
@@ -17,11 +21,27 @@
     border-radius: 5px;
 	border: 3px solid #5f7ab1; 
     padding: 15px;
-	width: 370px;
+	width: 500px;
 	height: 20px; 
 	display: block;
 	text-align: center;
 	margin: auto;
+	font: 30px/100% written;
+	background-color: white;
+	outline: none;
+
+}
+
+.buttons {
+	color: #e74038;
+    border-radius: 5px;
+	border: 3px solid #5f7ab1;
+    padding: 4px;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	margin: auto;
+	margin-right: 8px;
 	font: 30px/100% written;
 	background-color: white;
 	outline: none;
@@ -33,7 +53,7 @@
     border-radius: 5px;
 	border: 3px solid #5f7ab1; 
     padding: 15px;
-	width: 370px;
+	width: 500px;
 	height: 400px; 
 	display: block;
 	text-align: center;
@@ -43,6 +63,8 @@
 	overflow: auto;
 
 }
+
+
 
 body {
 	background: #fcfebd;
